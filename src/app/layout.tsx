@@ -27,7 +27,7 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => (
           className="absolute right-0 hidden md:block"
           aria-hidden
         />
-        <div className="absolute bottom-0 mx-auto h-14 w-[calc(100%-2*var(--min-margin-x))] max-w-[60rem] bg-[#14589C] blur-[128px] [--min-margin-x:1rem]" />
+        <div className="absolute bottom-0 mx-auto h-14 w-[calc(100%-2*var(--min-margin-x))] max-w-[60rem] bg-[#14589C] blur-[64px] [--min-margin-x:1rem] md:blur-[128px]" />
       </header>
 
       {children}

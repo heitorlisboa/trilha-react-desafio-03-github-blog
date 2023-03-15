@@ -9,6 +9,9 @@
 /** @type {import("next").NextConfig} */
 const config = {
   reactStrictMode: true,
+  images: {
+    remotePatterns: [{ hostname: 'avatars.githubusercontent.com' }],
+  },
   experimental: {
     appDir: true,
   },
