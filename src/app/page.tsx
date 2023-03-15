@@ -7,11 +7,7 @@ export const metadata = {
 };
 
 const HomePage = () => {
-  return (
-    <main>
-      <h1>GitHub Blog</h1>
-    </main>
-  );
+  return <main></main>;
 };
 
 export default HomePage;
