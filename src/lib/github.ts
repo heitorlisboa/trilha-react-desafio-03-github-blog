@@ -9,6 +9,7 @@ import type {
   GithubError,
   Installation,
   Issue,
+  Search,
   User,
 } from '@/types/github';
 
@@ -123,10 +124,10 @@ export async function fetchIssues() {
 }
 
 export async function queryIssues(query: string) {
-  return await fetchGithub(
+  return (await fetchGithub(
     `/search/issues?q=${query} repo:${env.GITHUB_USERNAME}/${env.GITHUB_REPOSITORY} author:${env.GITHUB_USERNAME} label:blog in:title,body`,
     accessToken
-  );
+  )) as Search<Issue>;
 }
 
 export async function fetchIssueData(issueNumber: string | number) {

@@ -17,7 +17,12 @@ export type Issue = {
   html_url: string;
   number: number;
   title: string;
+  created_at: string;
   body: string;
+};
+
+export type Search<Item> = {
+  items: Item[];
 };
 
 export type User = {

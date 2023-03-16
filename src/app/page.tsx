@@ -1,12 +1,13 @@
 import Image from 'next/image';
 
-import { fetchUserData } from '@/lib/github';
+import { fetchIssues, fetchUserData } from '@/lib/github';
 
 import { ContentHeader } from '@/components/ContentHeader';
 import { ArrowUpRightFromSquare } from '@/svgs/ArrowUpRightFromSquare';
 import { GithubBrand } from '@/svgs/GithubBrand';
 import { Building } from '@/svgs/Building';
 import { UserGroup } from '@/svgs/UserGroup';
+import { Posts } from './Posts';
 
 export const metadata = {
   title: 'GitHub Blog',
@@ -18,9 +19,10 @@ export const metadata = {
 
 const HomePage = async () => {
   const userData = await fetchUserData();
+  const initialPosts = await fetchIssues();
 
   return (
-    <main>
+    <main className="pb-48">
       <ContentHeader className="flex flex-col items-center gap-8 md:flex-row md:items-stretch">
         <Image
           className="rounded-lg object-cover"
@@ -87,6 +89,8 @@ const HomePage = async () => {
           </ul>
         </div>
       </ContentHeader>
+
+      <Posts initialPosts={initialPosts} />
     </main>
   );
 };
