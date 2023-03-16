@@ -53,6 +53,19 @@ const config = {
           },
         },
       });
+
+      addComponents({
+        '.custom-margin': {
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          width: 'calc(100% - 2 * var(--min-margin-x))',
+          maxWidth: '56rem',
+          '--min-margin-x': '1rem',
+          '@media screen(sm)': {
+            '--min-margin-x': '1.5rem',
+          },
+        },
+      });
     }),
   ],
 };
