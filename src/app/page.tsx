@@ -83,7 +83,7 @@ const HomePage = async () => {
               />{' '}
               <span className="text-slate-200">
                 {userData.followers}{' '}
-                {userData.followers > 1 ? 'seguidores' : 'seguidor'}
+                {userData.followers === 1 ? 'seguidor' : 'seguidores'}
               </span>
             </li>
           </ul>

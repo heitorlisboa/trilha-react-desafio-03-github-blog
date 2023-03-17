@@ -66,7 +66,7 @@ export const Posts = ({ initialPosts }: PostsProps) => {
             Publicações
           </h3>
           <span className="text-sm leading-relaxed text-slate-400">
-            {posts.length} {posts.length > 1 ? 'publicações' : 'publicação'}
+            {posts.length} {posts.length === 1 ? 'publicação' : 'publicações'}
           </span>
         </div>
 
