@@ -34,9 +34,9 @@ const HomePage = async () => {
         />
         <div className="flex w-full flex-col">
           <div className="flex flex-wrap justify-between gap-x-4 gap-y-1">
-            <h2 className="text-2xl font-bold leading-tight text-slate-50">
+            <h1 className="text-2xl font-bold leading-tight text-slate-50">
               {userData.name || userData.login}
-            </h2>
+            </h1>
             <a
               className="link-border flex items-center gap-2 text-xs font-bold uppercase leading-relaxed text-brand-blue"
               href={userData.html_url}

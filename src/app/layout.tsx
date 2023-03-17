@@ -19,10 +19,10 @@ const RootLayout: FC<PropsWithChildren> = ({ children }) => (
     <body className="isolate bg-slate-950 leading-relaxed text-slate-300 [-moz-osx-font-smoothing:grayscale] [-webkit-font-smoothing:antialiased]">
       <header className="relative -z-10 -mb-24 flex h-72 items-center justify-center overflow-hidden bg-slate-900">
         <HeaderLinesLeft className="absolute left-0" aria-hidden />
-        <h1>
-          <span className="sr-only">GitHub Blog</span>
-          <Logo className="absolute top-16 -translate-x-1/2" aria-hidden />
-        </h1>
+        <Logo
+          className="absolute top-16 -translate-x-1/2"
+          aria-label="GitHub Blog"
+        />
         <HeaderLinesRight
           className="absolute right-0 hidden md:block"
           aria-hidden

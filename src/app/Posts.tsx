@@ -62,9 +62,9 @@ export const Posts = ({ initialPosts }: PostsProps) => {
         onSubmit={handleSubmit(handleSearchPosts)}
       >
         <div className="flex items-center justify-between">
-          <h3 className="text-lg font-bold leading-relaxed text-slate-200">
+          <h2 className="text-lg font-bold leading-relaxed text-slate-200">
             Publicações
-          </h3>
+          </h2>
           <span className="text-sm leading-relaxed text-slate-400">
             {posts.length} {posts.length === 1 ? 'publicação' : 'publicações'}
           </span>
