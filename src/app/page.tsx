@@ -9,14 +9,6 @@ import { Building } from '@/svgs/Building';
 import { UserGroup } from '@/svgs/UserGroup';
 import { Posts } from './Posts';
 
-export const metadata = {
-  title: 'GitHub Blog',
-  description: 'Blog que usa issues do GitHub como posts',
-  icons: {
-    icon: '/favicon.svg',
-  },
-};
-
 const HomePage = async () => {
   const userData = await fetchUserData();
   const initialPosts = await fetchIssues();
@@ -41,7 +33,7 @@ const HomePage = async () => {
               className="link-border flex items-center gap-2 text-xs font-bold uppercase leading-relaxed text-brand-blue"
               href={userData.html_url}
             >
-              GitHub <ArrowUpRightFromSquare className="h-3 w-3" />
+              GitHub <ArrowUpRightFromSquare className="h-3 w-3" aria-hidden />
             </a>
           </div>
 

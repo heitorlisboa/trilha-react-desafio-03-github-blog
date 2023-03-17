@@ -30,6 +30,7 @@ const config = {
     },
   },
   plugins: [
+    require('@tailwindcss/typography'),
     plugin(function ({ addComponents }) {
       addComponents({
         '.link-border': {

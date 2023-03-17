@@ -17,6 +17,11 @@ export type Issue = {
   html_url: string;
   number: number;
   title: string;
+  user: {
+    login: string;
+    html_url: string;
+  };
+  comments: number;
   created_at: string;
   body: string;
 };

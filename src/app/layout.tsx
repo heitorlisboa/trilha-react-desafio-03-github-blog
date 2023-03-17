@@ -7,6 +7,17 @@ import { Logo } from './Logo';
 import { HeaderLinesLeft } from './HeaderLinesLeft';
 import { HeaderLinesRight } from './HeaderLinesRight';
 
+export const metadata = {
+  title: {
+    default: 'GitHub Blog',
+    template: '%s | GitHub Blog',
+  },
+  description: 'Blog que usa issues do GitHub como posts',
+  icons: {
+    icon: '/favicon.svg',
+  },
+};
+
 const nunito = Nunito({
   variable: '--font-nunito',
   weight: ['400', '700'],

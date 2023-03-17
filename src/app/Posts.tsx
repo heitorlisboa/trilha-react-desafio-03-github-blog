@@ -8,9 +8,9 @@ import { z } from 'zod';
 import { formatDistanceToNow } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
-import type { Issue, Search } from '@/types/github';
 import { capitalizeFirstWord } from '@/utils/capitalize-first-word';
 import { removeMarkdown } from '@/utils/remove-markdown';
+import type { Issue, Search } from '@/types/github';
 
 const searchFormSchema = z.object({
   query: z.string().refine((value) => {
