@@ -40,8 +40,6 @@ const HomePage = async () => {
             <a
               className="link-border flex items-center gap-2 text-xs font-bold uppercase leading-relaxed text-brand-blue"
               href={userData.html_url}
-              target="_blank"
-              rel="noreferrer"
             >
               GitHub <ArrowUpRightFromSquare className="h-3 w-3" />
             </a>
@@ -57,8 +55,6 @@ const HomePage = async () => {
               <a
                 className="flex items-center gap-2 [&>svg]:hover:text-slate-50"
                 href={userData.html_url}
-                target="_blank"
-                rel="noreferrer"
               >
                 <GithubBrand
                   className="h-5 w-5 text-slate-600 transition-colors"
