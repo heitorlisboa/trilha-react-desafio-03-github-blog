@@ -110,27 +110,32 @@ export const Posts = ({ initialPosts }: PostsProps) => {
         aria-label="Publicações"
       >
         {posts.map((post) => (
-          <li key={post.number} className="min-w-0 rounded-lg bg-slate-850 p-8">
-            <div className="flex flex-col items-baseline justify-between gap-x-4 lg:flex-row">
-              <strong className="flex-1 text-xl leading-relaxed text-slate-50">
-                <Link href={`/post/${post.number}`}>{post.title}</Link>
-              </strong>
-              <time
-                className="text-sm leading-relaxed text-slate-400"
-                dateTime={post.created_at}
-              >
-                {capitalizeFirstWord(
-                  formatDistanceToNow(new Date(post.created_at), {
-                    addSuffix: true,
-                    locale: ptBR,
-                  })
-                )}
-              </time>
-            </div>
+          <li
+            key={post.number}
+            className="min-w-0 rounded-lg border border-[transparent] bg-slate-850 transition-colors hover:border-slate-600 focus-visible:border-slate-600"
+          >
+            <Link className="block p-8" href={`/post/${post.number}`}>
+              <div className="flex flex-col items-baseline justify-between gap-x-4 lg:flex-row">
+                <strong className="flex-1 text-xl leading-relaxed text-slate-50">
+                  {post.title}
+                </strong>
+                <time
+                  className="text-sm leading-relaxed text-slate-400"
+                  dateTime={post.created_at}
+                >
+                  {capitalizeFirstWord(
+                    formatDistanceToNow(new Date(post.created_at), {
+                      addSuffix: true,
+                      locale: ptBR,
+                    })
+                  )}
+                </time>
+              </div>
 
-            <p className="mt-5 overflow-hidden text-ellipsis break-words [-webkit-line-clamp:4] [display:-webkit-box] [-webkit-box-orient:vertical]">
-              {removeMarkdown(post.body.substring(0, 500))}
-            </p>
+              <p className="mt-5 overflow-hidden text-ellipsis break-words [-webkit-line-clamp:4] [display:-webkit-box] [-webkit-box-orient:vertical]">
+                {removeMarkdown(post.body.substring(0, 500))}
+              </p>
+            </Link>
           </li>
         ))}
       </ul>
