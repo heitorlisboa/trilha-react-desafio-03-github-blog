@@ -37,8 +37,11 @@ export const Posts = ({ initialPosts }: PostsProps) => {
     resolver: zodResolver(searchFormSchema),
   });
   const [posts, setPosts] = useState<Issue[]>(initialPosts);
+  const [isLoading, setIsLoading] = useState(false);
 
   async function handleSearchPosts({ query }: SearchFormSchema) {
+    setIsLoading(true);
+
     const posts =
       query.length > 0
         ? (
@@ -49,6 +52,7 @@ export const Posts = ({ initialPosts }: PostsProps) => {
         : initialPosts;
 
     setPosts(posts);
+    setIsLoading(false);
   }
 
   return (
@@ -75,12 +79,10 @@ export const Posts = ({ initialPosts }: PostsProps) => {
         </label>
         <input
           id="search-input"
-          className="mt-3 w-full rounded-md border border-slate-800 bg-black px-4 py-3 [&:not(:placeholder-shown)]:border-brand-blue"
+          className="mt-3 w-full rounded-md border border-slate-800 bg-black px-4 py-3 placeholder:text-slate-600 [&:not(:placeholder-shown)]:border-brand-blue"
           type="text"
           placeholder="Buscar conteúdo"
-          aria-describedby={
-            errors.query?.message ? 'search-input-error' : undefined
-          }
+          aria-describedby={errors.query?.message && 'search-input-error'}
           {...register('query')}
         />
         {errors.query?.message && (
@@ -90,9 +92,22 @@ export const Posts = ({ initialPosts }: PostsProps) => {
         )}
       </form>
 
+      <div
+        className="mx-auto mt-6 -mb-6 h-5 w-5 rounded-full border-2 border-slate-400 border-b-[transparent] data-[visible='false']:sr-only motion-safe:animate-spin"
+        role="status"
+        aria-live="assertive"
+        data-visible={isLoading}
+      >
+        <p className="sr-only">
+          {isLoading
+            ? 'Carregando publicações...'
+            : 'Publicações foram carregadas.'}
+        </p>
+      </div>
+
       <ul
         className="custom-margin mt-12 grid gap-8 sm:grid-cols-[repeat(auto-fill,minmax(22.5rem,1fr))]"
-        aria-label="Posts"
+        aria-label="Publicações"
       >
         {posts.map((post) => (
           <li key={post.number} className="min-w-0 rounded-lg bg-slate-850 p-8">
