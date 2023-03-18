@@ -109,6 +109,7 @@ export const Posts = ({ initialPosts }: PostsProps) => {
         className="custom-margin mt-12 grid gap-8 sm:grid-cols-[repeat(auto-fill,minmax(22.5rem,1fr))]"
         aria-label="Publicações"
       >
+        {posts.length === 0 && <span>Nenhuma publicação encontrada.</span>}
         {posts.map((post) => (
           <li
             key={post.number}
